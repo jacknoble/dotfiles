@@ -1,0 +1,13 @@
+--ignore-dir=vendor
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=doc
+--nosql
+--type-set=ruby=.rb,.rake,.rhtml,.erb,.rjs,.slim
+--type-set=haml=.haml
+--type-set=sass=.sass
+--type-set=scss=.scss
+--type-set=erb=.erb
+--type-set=slim=.slim
+--type-set=mustache=.mustache,.mu,.handlebars,.hbs,.hbars
+--type-set=coffeescript=.coffee,.eco
