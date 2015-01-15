@@ -28,10 +28,10 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias bbin="cd ~/bin"
 alias dls="cd ~/Downloads"
-alias dox="cd ~/code/doximity"
-alias campa="cd ~/code/campaigns"
+alias dox="cd ~/code/work/doximity"
+alias campa="cd ~/code/work/campaigns"
 alias home="cd ~/"
-alias ulists='cd ~/code/user_lists'
+alias ulists='cd ~/code/work/user-lists'
 alias dotfiles="cd ~/dotfiles"
 alias code="cd ~/code"
 
