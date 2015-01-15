@@ -7,8 +7,8 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="/usr/local/heroku/bin:$PATH"
 
 #Golang dep
-export GOPATH="/Users/jack/gocode"
-
+export GOPATH="$HOME/gocode"
+export PATH="$GOPATH/bin:$PATH"
 ##
 # Your previous /Users/jack/.bash_profile file was backed up as /Users/jack/.bash_profile.macports-saved_2014-05-21_at_11:51:44
 ##
