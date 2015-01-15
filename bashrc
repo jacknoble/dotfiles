@@ -69,5 +69,6 @@ alias lsop="lsof -i -P | grep -i 'listen'"
 alias sauce="source ~/.bash_profile"
 alias scheme="gsi"
 alias permit="chmod 777"
+alias :q="exit"
 
 source ~/.secrets
