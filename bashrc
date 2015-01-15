@@ -51,6 +51,7 @@ alias diff="git diff"
 alias git="hub"
 alias subupdate="git submodule update --init --recursive"
 alias untracked="git ls-files --others --exclude-standard"
+alias staged="git diff --name-only --cached"
 
 #Rails
 alias be="bundle exec"
