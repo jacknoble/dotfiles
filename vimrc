@@ -20,6 +20,7 @@ set shiftwidth=2
 set mouse=a
 set autoread
 vnoremap <C-c> "*y"
+nmap <Leader>a :Ack<space>
 syntax enable
 set background=dark
 colorscheme solarized
