@@ -19,6 +19,10 @@ set tabstop=2
 set shiftwidth=2
 set mouse=a
 set autoread
+"Remove trailing whitespace
+set eol
+autocmd FileType ruby,coffee,js autocmd BufWritePre <buffer> :%s/\s\+$//e
+"Copy to clipboard
 vnoremap <C-c> "*y"
 nmap <Leader>a :Ack<space>
 syntax enable

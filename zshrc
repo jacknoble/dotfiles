@@ -37,8 +37,6 @@ alias lb="git branch"
 alias branch="git branch"
 alias gm="git merge"
 alias diff="git diff"
-#I guess I already trust Github with everything else...
-alias git="hub"
 alias subupdate="git submodule update --init --recursive"
 alias untracked="git ls-files --others --exclude-standard"
 alias staged="git diff --name-only --cached"
@@ -117,7 +115,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git gitfast alias-tips colored-man)
 
 # User configuration
 
