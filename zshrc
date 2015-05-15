@@ -1,4 +1,5 @@
 export PATH="/usr/local/bin:$HOME/bin:$HOME/.gem/ruby/:$PATH"
+export EDITOR="vim"
 eval "$(rbenv init -)"
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -147,3 +148,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias reports="cd /Users/jack/gocode/src/github.com/doximity/reports"
