@@ -26,6 +26,7 @@ autocmd FileType ruby,coffee,js autocmd BufWritePre <buffer> :%s/\s\+$//e
 "Copy to clipboard
 vnoremap <C-c> "*y"
 nmap <Leader>a :Ack<space>
+nmap <Leader>s :SyntasticToggleMode<CR>
 syntax enable
 set background=dark
 colorscheme solarized
@@ -47,3 +48,19 @@ endfunction
 command! -nargs=+ GotoOrOpen call GotoOrOpen("<args>")
 let g:CommandTAcceptSelectionTabCommand = 'GotoOrOpen'
 let g:CommandTAcceptSelectionTabMap = ['<CR>']
+
+"Syntastic config
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_sass_checkers = ['scss_lint']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_scss_sass_quiet_messages = { "regex":   'unreadable' }
+let g:syntastic_go_go_quiet_messages = { "regex": "cannot find" }
