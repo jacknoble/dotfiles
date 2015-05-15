@@ -17,6 +17,7 @@ set relativenumber
 set expandtab
 set tabstop=2
 set shiftwidth=2
+autocmd FileType go setlocal ts=4 sw=4 sts=0 noexpandtab
 set mouse=a
 set autoread
 "Remove trailing whitespace
