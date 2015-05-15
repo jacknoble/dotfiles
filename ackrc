@@ -2,6 +2,7 @@
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=doc
+--ignore-file=match:bundle.js
 --nosql
 --type-set=ruby=.rb,.rake,.rhtml,.erb,.rjs,.slim
 --type-set=haml=.haml
