@@ -43,10 +43,7 @@ alias staged="git diff --name-only --cached"
 
 #Rails
 alias be="bundle exec"
-alias rokurun="heroku run"
 alias rr=". approot"
-alias konarun="bundle && bundle exec rake tmp:clear && bundle exec rake konacha:run"
-alias konaserve="bundle && bundle exec rake tmp:clear && bundle exec rake konacha:serve"
 alias logs="tail -f log/development.log"
 alias migrate='bundle exec rake db:migrate'
 alias rollback='bundle exec rake db:rollback'
