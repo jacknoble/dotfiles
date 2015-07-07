@@ -1,5 +1,6 @@
 export PATH="/usr/local/bin:$HOME/bin:$HOME/.gem/ruby/:$PATH"
 export EDITOR="vim"
+export PGDATA="/usr/local/pgsql/data"
 eval "$(rbenv init -)"
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -24,6 +25,8 @@ alias home="cd ~/"
 alias ulists='cd ~/code/work/user-lists'
 alias dotfiles="cd ~/dotfiles"
 alias code="cd ~/code"
+alias reports="cd /Users/jack/gocode/src/github.com/doximity/reports"
+alias quack= "cd ~/code/stuff/quack"
 
 #Quick File Access
 alias zrc="vim ~/dotfiles/zshrc"
@@ -145,4 +148,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias reports="cd /Users/jack/gocode/src/github.com/doximity/reports"
