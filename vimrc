@@ -1,5 +1,8 @@
+"Pathogen
 execute pathogen#infect()
 execute pathogen#helptags()
+
+"General
 syntax on
 filetype indent plugin on
 set hidden
@@ -17,21 +20,29 @@ set relativenumber
 set expandtab
 set tabstop=2
 set shiftwidth=2
-autocmd FileType go setlocal ts=4 sw=4 sts=0 noexpandtab
 set mouse=a
 set autoread
-"Remove trailing whitespace
-set eol
-autocmd FileType ruby,coffee,js autocmd BufWritePre <buffer> :%s/\s\+$//e
-"Copy to clipboard
-vnoremap <C-c> "*y"
-nmap <Leader>a :Ack<space>
-nnoremap gr :Ack <cword> <CR>
-nmap <Leader>s :SyntasticToggleMode<CR>
 syntax enable
 set background=dark
 colorscheme solarized
 filetype plugin on
+
+"Change tabs for Golang
+autocmd FileType go setlocal ts=4 sw=4 sts=0 noexpandtab
+
+"Remove trailing whitespace
+set eol
+autocmd FileType ruby,coffee,js autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+"Copy to clipboard
+vnoremap <C-c> "*y"
+
+"Shortcuts
+nmap <Leader>a :Ack<space>
+nnoremap gr :Ack <cword> <CR>
+nmap <Leader>s :SyntasticToggleMode<CR>
+
+"Auto reload
 augroup reload_vimrc
   autocmd!
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
