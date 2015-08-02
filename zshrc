@@ -26,12 +26,13 @@ alias ulists='cd ~/code/work/user-lists'
 alias dotfiles="cd ~/dotfiles"
 alias code="cd ~/code"
 alias reports="cd /Users/jack/gocode/src/github.com/doximity/reports"
-alias quack= "cd ~/code/stuff/quack"
+alias quack="cd /Users/jack/code/stuff/quack"
 
 #Quick File Access
 alias zrc="vim ~/dotfiles/zshrc"
 alias vrc="vim ~/dotfiles/vimrc"
 alias vimt="vim '+CommandT'"
+alias scratch="vim scratch"
 
 #Git
 alias gp="git pull"

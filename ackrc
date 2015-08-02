@@ -3,6 +3,7 @@
 --ignore-dir=tmp
 --ignore-dir=doc
 --ignore-dir=_build
+--ignore-dir=deps
 --ignore-file=match:bundle.js
 --nosql
 --type-set=ruby=.rb,.rake,.rhtml,.erb,.rjs,.slim
