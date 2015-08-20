@@ -32,7 +32,7 @@ autocmd FileType go setlocal ts=4 sw=4 sts=0 noexpandtab
 
 "Remove trailing whitespace
 set eol
-autocmd FileType ruby,coffee,js autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType ruby,coffee,js,ex,exs autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 "Copy to clipboard
 vnoremap <C-c> "*y"
