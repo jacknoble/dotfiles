@@ -19,14 +19,14 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias bbin="cd ~/bin"
 alias dls="cd ~/Downloads"
-alias dox="cd ~/code/work/doximity"
-alias campa="cd ~/code/work/campaigns"
+alias dox="cd ~/code/doximity/doximity"
+alias campa="cd ~/code/doximity/campaigns"
 alias home="cd ~/"
-alias ulists='cd ~/code/work/user-lists'
+alias ulists='cd ~/code/doximity/user-lists'
 alias dotfiles="cd ~/dotfiles"
 alias code="cd ~/code"
-alias reports="cd /Users/jack/gocode/src/github.com/doximity/reports"
-alias quack="cd /Users/jack/code/stuff/quack"
+alias reports="cd /Users/jacknoble/gocode/src/github.com/doximity/reports"
+alias quack="cd /Users/jacknoble/code/stuff/quack"
 
 #Quick File Access
 alias zrc="vim ~/dotfiles/zshrc"
@@ -35,11 +35,7 @@ alias vimt="vim '+CommandT'"
 alias scratch="vim scratch"
 
 #Git
-alias gp="git pull"
 alias gst="git status"
-alias cb="git checkout"
-alias lb="git branch"
-alias branch="git branch"
 alias gm="git merge"
 alias subupdate="git submodule update --init --recursive"
 alias untracked="git ls-files --others --exclude-standard"
@@ -120,7 +116,7 @@ plugins=(git alias-tips colored-man)
 
 # User configuration
 
-export PATH="/Users/jack/gocode/bin:/usr/local/heroku/bin:/Users/jack/.rbenv/shims:/usr/local/bin:/Users/jack/bin:/Users/jack/.gem/ruby/:/Users/jack/gocode/bin:/usr/local/heroku/bin:/Users/jack/.rbenv/shims:/usr/local/bin:/Users/jack/bin:/Users/jack/.gem/ruby/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Users/jacknoble/gocode/bin:/usr/local/heroku/bin:/Users/jacknoble/.rbenv/shims:/usr/local/bin:/Users/jacknoble/bin:/Users/jacknoble/.gem/ruby/:/Users/jacknoble/gocode/bin:/usr/local/heroku/bin:/Users/jacknoble/.rbenv/shims:/usr/local/bin:/Users/jacknoble/bin:/Users/jacknoble/.gem/ruby/:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
