@@ -32,7 +32,7 @@ autocmd FileType go setlocal ts=4 sw=4 sts=0 noexpandtab
 
 "Remove trailing whitespace
 set eol
-autocmd FileType ruby,coffee,js autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType ruby,coffee,js,elixir autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 "Copy to clipboard
 vnoremap <C-c> "*y"
@@ -62,7 +62,7 @@ let g:CommandTAcceptSelectionTabCommand = 'GotoOrOpen'
 let g:CommandTAcceptSelectionTabMap = ['<CR>']
 set wildignore=_build/*,*.swp,node_modules/*,deps/*
 "Syntastic config
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['jsxhint', 'jshint']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_sass_checkers = ['scss_lint']
 set statusline+=%#warningmsg#
