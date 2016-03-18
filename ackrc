@@ -6,6 +6,7 @@
 --ignore-dir=deps
 --ignore-dir=Godeps
 --ignore-file=match:bundle.js
+--ignore-dir=coverage
 --nosql
 --type-set=ruby=.rb,.rake,.rhtml,.erb,.rjs,.slim
 --type-set=haml=.haml

@@ -1,4 +1,5 @@
 export EDITOR="vim"
+export BUNDLER_EDITOR="bundle_vim"
 export PGDATA="/usr/local/pgsql/data"
 eval "$(rbenv init -)"
 export CLICOLOR=1
@@ -17,7 +18,6 @@ export PATH="/Users/jacknoble/anaconda/bin:$PATH"
 export GOPATH="$HOME/code/go/"
 export PATH="$GOPATH/bin:$PATH"
 
-
 export PATH="/usr/local/bin:$HOME/bin:$HOME/.gem/ruby/:$PATH"
 ##
 #Nav
@@ -29,9 +29,9 @@ alias bbin="cd ~/bin"
 alias dls="cd ~/Downloads"
 alias dox="cd ~/code/doximity/doximity"
 alias campa="cd ~/code/doximity/campaigns"
+alias docnav="cd ~/code/doximity/docnav"
 alias reports="cd ~/code/go/src/github.com/doximity/reports/"
 alias home="cd ~/"
-alias ulists='cd ~/code/doximity/user-lists'
 alias dotfiles="cd ~/dotfiles"
 alias code="cd ~/code"
 
@@ -39,30 +39,23 @@ alias code="cd ~/code"
 alias zrc="vim ~/dotfiles/zshrc"
 alias vrc="vim ~/dotfiles/vimrc"
 alias vimt="vim '+CommandT'"
-alias scratch="vim scratch"
 
 #Git
 alias gst="git status"
-alias gm="git merge"
-alias untracked="git ls-files --others --exclude-standard"
 alias staged="git diff --name-only --cached"
 
 #Rails
 alias be="bundle exec"
 alias rr=". approot"
 alias logs="tail -f log/development.log"
-alias migrate='bundle exec rake db:migrate'
-alias rollback='bundle exec rake db:rollback'
-alias pyr="pry"
-alias brspec="bin/rspec"
 
 #Utility
 alias lsop="lsof -i -P | grep -i 'listen'"
 alias scheme="gsi"
-alias permit="chmod 777"
 alias :q="exit"
 
 #Typos
+alias pyr="pry"
 alias mkdire="mkdir"
 
 source ~/.secrets
