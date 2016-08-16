@@ -31,12 +31,15 @@ filetype plugin on
 "Change tabs for Golang
 autocmd FileType go setlocal ts=4 sw=4 sts=0 noexpandtab
 
-"Remove trailing whitespace
 set eol
-autocmd FileType ruby,coffee,js,elixir autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+"Remove trailing whitespace
+autocmd FileType ruby,coffee,js,elixir,javascript.jsx,.slim,.erb,.es6,.jbuilder autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 "Copy to clipboard
 vnoremap <C-c> "*y"
+
+set pastetoggle=<Leader>p
 
 "Shortcuts
 nmap <Leader>a :Ack<space>
@@ -61,9 +64,30 @@ endfunction
 command! -nargs=+ GotoOrOpen call GotoOrOpen("<args>")
 let g:CommandTAcceptSelectionTabCommand = 'GotoOrOpen'
 let g:CommandTAcceptSelectionTabMap = ['<CR>']
-set wildignore=_build/*,*.swp,node_modules/*,deps/*
+set wildignore=*/_build/*,*.swp,*/node_modules/*,*/deps/*,*/assets/images/*
+
+
 "Syntastic config
-let g:syntastic_javascript_checkers = ['jsxhint', 'jshint']
+
+"Checks for local eslint script, fallback to global
+function! SyntasticESlintChecker()
+  let l:npm_bin = ''
+  let l:eslint = 'eslint'
+
+  if executable('npm')
+    let l:npm_bin = split(system('npm bin'), '\n')[0]
+  endif
+
+  if strlen(l:npm_bin) && executable(l:npm_bin . '/eslint')
+    let l:eslint = l:npm_bin . '/eslint'
+  endif
+
+  let b:syntastic_javascript_eslint_exec = l:eslint
+endfunction
+
+let g:syntastic_javascript_checkers = ["eslint"]
+autocmd FileType javascript :call SyntasticESlintChecker()
+
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_sass_checkers = ['scss_lint']
 set statusline+=%#warningmsg#
@@ -76,3 +100,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
 let g:syntastic_ruby_rubocop_exec = "~/bin/rubocop.sh"
+
+au BufRead,BufNewFile *.racc set filetype=racc
+au BufRead,BufNewFile *.es6 set filetype=javascript
+au BufRead,BufNewFile *.jbuilder set filetype=ruby

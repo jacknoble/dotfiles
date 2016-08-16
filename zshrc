@@ -31,7 +31,8 @@ alias dox="cd ~/code/doximity/doximity"
 alias campa="cd ~/code/doximity/campaigns"
 alias docnav="cd ~/code/doximity/docnav"
 alias reports="cd ~/code/go/src/github.com/doximity/reports/"
-alias home="cd ~/"
+alias dfe="cd ~/code/doximity/doximity-frontend-react"
+
 alias dotfiles="cd ~/dotfiles"
 alias code="cd ~/code"
 
@@ -69,3 +70,15 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 plugins=(git alias-tips colored-man)
 source $ZSH/oh-my-zsh.sh
+
+autoload -U zmv
+alias mmv='noglob zmv -W'
+
+# PW for Commit Signing
+if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
+  source ~/.gnupg/.gpg-agent-info
+  export GPG_AGENT_INFO
+else
+  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi
+export PATH=/usr/local/bin:/Users/jacknoble/bin:/Users/jacknoble/.gem/ruby/:/Users/jacknoble/code/go//bin:/Users/jacknoble/anaconda/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin:/usr/local/heroku/bin:/Users/jacknoble/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/m-cli

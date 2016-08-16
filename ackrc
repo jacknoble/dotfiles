@@ -1,4 +1,6 @@
 --ignore-dir=vendor
+--ignore-dir=node_modules
+--ignore-dir=app/assets/images
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=doc
