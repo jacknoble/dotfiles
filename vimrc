@@ -66,7 +66,6 @@ let g:CommandTAcceptSelectionTabCommand = 'GotoOrOpen'
 let g:CommandTAcceptSelectionTabMap = ['<CR>']
 set wildignore=*/_build/*,*.swp,*/node_modules/*,*/deps/*,*/assets/images/*
 
-
 "Syntastic config
 
 "Checks for local eslint script, fallback to global
