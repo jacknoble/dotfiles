@@ -1,6 +1,18 @@
-"Pathogen
-execute pathogen#infect()
-execute pathogen#helptags()
+"Vim-plug
+call plug#begin()
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'micha/vim-colors-solarized', { 'set': 'all' }
+Plug 'vim-syntastic/syntastic'
+Plug 'jbodah/vim-elixir', { 'branch': 'indent-refactor' }
+Plug 'mileszs/ack.vim'
+Plug 'AndrewRadev/vim-eco'
+Plug 'tpope/vim-fugitive'
+Plug 'kchmck/vim-coffee-script'
+Plug 'slim-template/vim-slim'
+
+call plug#end()
 
 "General
 syntax on
@@ -23,51 +35,40 @@ set shiftwidth=2
 set mouse=a
 set autoread
 set colorcolumn=80
+set wildignore=*/_build/*,*.swp,*/node_modules/*,*/deps/*,*/assets/images/*
+set eol
+filetype plugin on
+
+"Remove trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
+
+"Solarized
 syntax enable
 set background=dark
 colorscheme solarized
-filetype plugin on
 
 "Change tabs for Golang
 autocmd FileType go setlocal ts=4 sw=4 sts=0 noexpandtab
 
-set eol
-
-"Remove trailing whitespace
-autocmd FileType ruby,coffee,js,elixir,javascript.jsx,.slim,.erb,.es6,.jbuilder autocmd BufWritePre <buffer> :%s/\s\+$//e
+"4 space indentation for C
+autocmd FileType c setlocal ts=4 sw=4
 
 "Copy to clipboard
 vnoremap <C-c> "*y"
-
-set pastetoggle=<Leader>p
 
 "Shortcuts
 nmap <Leader>a :Ack<space>
 nnoremap gr :Ack <cword> <CR>
 nmap <Leader>s :SyntasticToggleMode<CR>
 
-"Auto reload
-augroup reload_vimrc
-  autocmd!
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC
-augroup END
-set switchbuf=usetab
-function! GotoOrOpen(...)
-  for file in a:000
-    if bufwinnr(file) != -1
-      exec "sb " . file
-    else
-      exec "tabe " . file
-    endif
-  endfor
-endfunction
-command! -nargs=+ GotoOrOpen call GotoOrOpen("<args>")
-let g:CommandTAcceptSelectionTabCommand = 'GotoOrOpen'
-let g:CommandTAcceptSelectionTabMap = ['<CR>']
-set wildignore=*/_build/*,*.swp,*/node_modules/*,*/deps/*,*/assets/images/*
+"Run rubocop autofix
+:autocmd BufWritePost *.rb :silent! exec ":!rubocop -a % &> /dev/null" | redraw!
+
+"Fzf setup
+command! Fuzz call fzf#run({'sink': 'tab drop'})
+nmap <Leader>t :Fuzz<CR>
 
 "Syntastic config
-
 "Checks for local eslint script, fallback to global
 function! SyntasticESlintChecker()
   let l:npm_bin = ''
@@ -78,6 +79,7 @@ function! SyntasticESlintChecker()
   endif
 
   if strlen(l:npm_bin) && executable(l:npm_bin . '/eslint')
+let g:syntastic_check_on_open = 1
     let l:eslint = l:npm_bin . '/eslint'
   endif
 
@@ -95,31 +97,14 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
-let g:syntastic_ruby_rubocop_exec = "~/bin/rubocop.sh"
+
+
+
+
 
 au BufRead,BufNewFile *.racc set filetype=racc
 au BufRead,BufNewFile *.es6 set filetype=javascript
 au BufRead,BufNewFile *.jbuilder set filetype=ruby
-
-" Run a given vim command on the results of fuzzy selecting from a given shell
-" command. See usage below.
-function! SelectaCommand(choice_command, selecta_args, vim_command)
-  try
-    let selection = system(a:choice_command . " | selecta " . a:selecta_args)
-  catch /Vim:Interrupt/
-    " Swallow the ^C so that the redraw below happens; otherwise there will be
-    " leftovers from selecta on the screen
-    redraw!
-    return
-  endtry
-  redraw!
-  exec a:vim_command . " " . selection
-endfunction
-
-" Find all files in all non-dot directories starting in the working directory.
-" Fuzzy select one of those. Open the selected file with :e.
-nnoremap <leader>f :call SelectaCommand("find * -type f", "", ":tabe")<cr>
-

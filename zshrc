@@ -1,9 +1,11 @@
-export EDITOR="vim"
+export EDITOR="nvim"
 export BUNDLER_EDITOR="bundle_vim"
 export PGDATA="/usr/local/pgsql/data"
 eval "$(rbenv init -)"
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+export MYVIMRC=~/.config/nvim/init.vim
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -12,13 +14,14 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/9.4/bin:$PATH"
 
 #Add Anacoda to path
-export PATH="/Users/jacknoble/anaconda/bin:$PATH"
+# export PATH="/Users/jacknoble/anaconda/bin:$PATH"
 
 #Golang dep
 export GOPATH="$HOME/code/go/"
 export PATH="$GOPATH/bin:$PATH"
 
 export PATH="/usr/local/bin:$HOME/bin:$HOME/.gem/ruby/:$PATH"
+
 ##
 #Nav
 alias ..="cd .."
@@ -29,6 +32,7 @@ alias bbin="cd ~/bin"
 alias dls="cd ~/Downloads"
 alias dox="cd ~/code/doximity/doximity"
 alias campa="cd ~/code/doximity/campaigns"
+alias acts="cd ~/code/doximity/activities"
 alias docnav="cd ~/code/doximity/docnav"
 alias reports="cd ~/code/go/src/github.com/doximity/reports/"
 alias dfe="cd ~/code/doximity/doximity-frontend-react"
@@ -36,10 +40,12 @@ alias dfe="cd ~/code/doximity/doximity-frontend-react"
 alias dotfiles="cd ~/dotfiles"
 alias code="cd ~/code"
 
+#Neovim
+alias vim="nvim"
 #Quick File Access
-alias zrc="vim ~/dotfiles/zshrc"
-alias vrc="vim ~/dotfiles/vimrc"
-alias vimt="vim '+CommandT'"
+alias zrc="nvim ~/dotfiles/zshrc"
+alias vrc="nvim ~/dotfiles/vimrc"
+alias vimt="nvim '+Fuzz'"
 
 #Git
 alias gst="git status"
@@ -81,4 +87,5 @@ if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
 else
   eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
-export PATH=/usr/local/bin:/Users/jacknoble/bin:/Users/jacknoble/.gem/ruby/:/Users/jacknoble/code/go//bin:/Users/jacknoble/anaconda/bin:/Applications/Postgres.app/Contents/Versions/9.4/bin:/usr/local/heroku/bin:/Users/jacknoble/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/m-cli
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
