@@ -101,10 +101,6 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs=1
 
-
-
-
-
 au BufRead,BufNewFile *.racc set filetype=racc
 au BufRead,BufNewFile *.es6 set filetype=javascript
 au BufRead,BufNewFile *.jbuilder set filetype=ruby
