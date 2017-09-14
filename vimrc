@@ -64,7 +64,7 @@ nnoremap gr :Ack <cword> <CR>
 nmap <Leader>s :SyntasticToggleMode<CR>
 
 "Run rubocop autofix
-:autocmd BufWritePost *.rb :silent! exec ":!rubocop -a % &> /dev/null" | redraw!
+nmap ra :silent! exec ":!rubocop -a % &> /dev/null" | redraw!
 
 "Fzf setup
 command! Fuzz call fzf#run({'sink': 'tab drop'})
