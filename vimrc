@@ -11,6 +11,8 @@ Plug 'AndrewRadev/vim-eco'
 Plug 'tpope/vim-fugitive'
 Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
+Plug 'jparise/vim-graphql'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
@@ -104,3 +106,4 @@ let g:syntastic_enable_signs=1
 au BufRead,BufNewFile *.racc set filetype=racc
 au BufRead,BufNewFile *.es6 set filetype=javascript
 au BufRead,BufNewFile *.jbuilder set filetype=ruby
+au BufRead,BufNewFile *.gql.js set filetype=graphql
